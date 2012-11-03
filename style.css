@@ -1,0 +1,46 @@
+/* CSS Document */
+#body {
+background-color: #121212;
+}
+
+#wrapper { 
+width:1024px;
+background-color: #121212;
+font-family:Verdana;
+}
+
+
+#logo {
+height: 250px;
+border-bottom: 1px solid #000000;
+}
+
+#main {
+min-height:400px;
+width: 600px;
+}
+        
+#menu {
+width: 130px;
+float:left;
+min-height:400px;
+text-align:center;
+}
+
+    #menu a {color:#0000FF;
+            text-align:left !important;
+            text-decoration: none;}
+    
+            #menu a:hover {color: #FF0000;
+                          text-align:left !important;
+                          text-decoration: none;}
+                
+
+	                   
+#footer {
+clear:both;
+height:10px;
+background-color: #7FCDFF;
+text-align:center;
+border-top: 1px solid #000000;
+}	                       
