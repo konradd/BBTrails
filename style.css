@@ -11,7 +11,8 @@ font-family:Verdana;
 
 #wrapper {
 
-width:1024px;}
+width:1024px;
+padding-left:10px;}
 
 
 #logo {
@@ -26,27 +27,26 @@ min-height:900px;
 background-color: #C9C9C9;
 font-size:12px;
 width:750px;
-margin-left:10px
+
+
 }
  
 }        
 #menu {
-background:url(http://img819.imageshack.us/img819/9135/menu01s.png) repeat-x;
-height:20px; 
-border-top: 1px solid #292826;
-clear: both;
-width:1010px;
-             
+height:200px; 
+width:1100px; 
+         
 }
     #menu ul {
     display: inline;
     }
           #menu ul li {
 	        background:url(Grafiki/tab0.png);
-	        float: left;
+	        float:left;
 	        list-style: none;
-	        width:80px;
+	        width:70px;
 	        padding-left:10px;
+	        
           	        }
 	             #menu a { 
 	              color: #FFFFFF;
