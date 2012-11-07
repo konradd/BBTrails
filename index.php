@@ -70,16 +70,19 @@ mysql_query('SET NAMES utf8');
 mysql_select_db("1206275_trails")
     or die("Could not select database");
 
-$query  = "SELECT * FROM Podpasma";
+
+$query  = "SELECT Pasma.Pasmo, Podpasma.Podpasmo FROM Podpasma, Pasma WHERE Pasma.id = Podpasma.ABC 
+AND Podpasma.ABC = 3";
 $result = mysql_query($query)
     or die("Query failed");
 
 while ($row = mysql_fetch_array($result)) {
-    echo "<TR><TD>" . $row["ID"]  .
+    echo "<TR><TD>" . $row["Podpasmo"]  .
+		 ":" .
+         "</TD><TD>" . $row["Pasmo"] .
          ":" .
-         "</TD><TD>" . $row["Podpasmo"] .
-         "</TD><TD>" . $row["Podpasma"][$row["Pasmo"]] .
-         "</TD></TR>".
+         "</TD><TD>" . $row["ABC"] .
+         "</TD></TR><br/ >" ;
 }
 
 mysql_free_result($result);
