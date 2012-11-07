@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 
@@ -62,8 +61,31 @@
         </div>          
   
             <div id="main">             
-           lan na jutro czyli niedziela jest taki : o 10 pod Gemini spotykamy się i jedziemy na Skrzyczne. Jedzie na pewno Remik Marek ja Grzesiu i chyba Konrad. Zapraszamy wszystkich chętnych :)
-	
+          <?php
+
+
+$link = mysql_connect("mysql3.ph-hos.osemka.pl", "1352208389_f", "1Bond007")
+    or die("Could not connect");
+mysql_query('SET NAMES utf8');
+mysql_select_db("1206275_trails")
+    or die("Could not select database");
+
+$query  = "SELECT * FROM Podpasma";
+$result = mysql_query($query)
+    or die("Query failed");
+
+while ($row = mysql_fetch_array($result)) {
+    echo "<TR><TD>" . $row["ID"]  .
+         ":" .
+         "</TD><TD>" . $row["Podpasmo"] .
+         "</TD><TD>" . $row["Podpasma"][$row["Pasmo"]] .
+         "</TD></TR>".
+}
+
+mysql_free_result($result);
+mysql_close($link);
+
+?>
 	 
 	        </div>
 	 
