@@ -56,13 +56,7 @@
 
             <div id="right">
 
-                
-                                                    
-        </div>          
-  
-            <div id="main">             
-          <?php
-
+            <?php
 
 $link = mysql_connect("mysql3.ph-hos.osemka.pl", "1352208389_f", "1Bond007")
     or die("Could not connect");
@@ -71,24 +65,28 @@ mysql_select_db("1206275_trails")
     or die("Could not select database");
 
 
-$query  = "SELECT Pasma.Pasmo, Podpasma.Podpasmo, Podpasma.Adres FROM Podpasma, Pasma WHERE Pasma.id = Podpasma.ABC 
-AND Podpasma.ABC = 1";
+$query  = "SELECT Pasma.Pasmo, Podpasma.Podpasmo, Podpasma.Adres FROM Podpasma, Pasma WHERE Pasma.id = Podpasma.ABC";
 $result = mysql_query($query)
     or die("Query failed");
 
 while ($row = mysql_fetch_array($result)) {
 	$ad= $row["Adres"];	
-    echo "<TR><a href=$ad><TD>" . $row["Podpasmo"]  .
-		 " : " .
-         "</TD></a><TD>" . $row["Pasmo"] .
+    echo "<TR><TD>" . $row["Pasmo"]  .
+		 "<br />" .
+         "</TD><a href=$ad><TD>" . $row["Podpasmo"] .
          
-         "</TD></TR><br/ >" ;
+         "</TD></TR></a><br/ >" ;
 }
 
 mysql_free_result($result);
 mysql_close($link);
 
-?>
+?>    
+                                                    
+        </div>          
+  
+            <div id="main">             
+          
 	 
 	        </div>
 	 
