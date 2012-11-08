@@ -76,6 +76,8 @@ while ($row = mysql_fetch_array($result1)) {
 	echo "<li><a href=$ad>" . $row["Podpasmo"]  .
 	     "</a></li>" ;
 }
+print ("</ul>");	 	     
+
 
 
 $query2  = "SELECT Pasma.Pasmo, Podpasma.Podpasmo, Podpasma.Adres FROM Podpasma, Pasma WHERE Podpasma.ABC = Pasma.id AND Pasma.id = 2";
@@ -89,20 +91,20 @@ while ($row = mysql_fetch_array($result2)) {
 	echo "<li><a href=$ad>" . $row["Podpasmo"]  .
 	     "</a></li>" ;
 }
+print ("</ul>");	 	     
     
 $query3  = "SELECT Pasma.Pasmo, Podpasma.Podpasmo, Podpasma.Adres FROM Podpasma, Pasma WHERE Podpasma.ABC = Pasma.id AND Pasma.id = 3";
 $result3 = mysql_query($query3)
     or die("Query3 failed");
     
-print ("<h1>Sudety</h1><ul>");  
-  
+print ("<h1>Sudety</h1>");  
+print ("<ul>");
 while ($row = mysql_fetch_array($result3)) {
 	$ad= $row["Adres"];  	 
 	echo "<li><a href=$ad>" . $row["Podpasmo"]  .
 	     "</a></li>" ;
-}
-
-	
+}	     
+print ("</ul>");	     
 
 
 mysql_free_result($result);
