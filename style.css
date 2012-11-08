@@ -41,25 +41,31 @@ width:1100px;
     display: inline;
     }
           #menu ul li {
-	        background:url(Grafiki/tab0.png);
+	        
 	        float:left;
 	        list-style: none;
 	        width:70px;
-	        padding-left:10px;
+	        
 	        
           	        }
 	             #menu a { 
+	              background:url(Grafiki/tab0.png);
 	              color: #FFFFFF;
 	              font-weight:bold;
 				  font-family:  Verdana,sans-serif;
 	              text-decoration: none;
                   font-size:14px;
+                  height:30px;
+                  padding-left: 10px;
+                  padding-right:100px;
                    
                   }
                      #menu a:hover {
-	                   background:url(http://img705.imageshack.us/img705/3402/menu02.png);
+	                   background:url(Grafiki/tab1.png);
 	                   color: #292826;
-	                   text-decoration: none;
+	                   width:80px;
+	                   padding-right:100px;
+	                 
                         
                              }
 
@@ -95,7 +101,7 @@ text-decoration: none;}
   }
       
       #right h1 {
-      color:#ffffff;
+      color:#BA7200;
       text-align:center;      
       font-size:18px;}
       
