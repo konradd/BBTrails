@@ -65,18 +65,23 @@ mysql_select_db("1206275_trails")
     or die("Could not select database");
 
 
-$query  = "SELECT Pasma.Pasmo, Podpasma.Podpasmo, Podpasma.Adres FROM Podpasma, Pasma WHERE Pasma.id = Podpasma.ABC";
+$query  = "SELECT Podpasma.Podpasmo, Podpasma.Adres FROM Podpasma";
 $result = mysql_query($query)
     or die("Query failed");
+$query  = "SELECT Pasma.Pasmo FROM Pasma";
+$result1 = mysql_query($query)
+    or die("Query1 failed");
+       
+while ($pasma = mysql_fetch_row($result1))
+	{
+	foreach ($pasma as $pasmo)
+		echo "<h1>". $pasmo. "</h1>" ;
+		while ($podpasma = mysql_fetch_row($result))
+		foreach ($podpasma as $podpasmo)
+			echo $podpasmo. "<br />" ;
+		}
+	
 
-while ($row = mysql_fetch_array($result)) {
-	$ad= $row["Adres"];	
-    echo "<TR><TD>" . $row["Pasmo"]  .
-		 "<br />" .
-         "</TD><a href=$ad><TD>" . $row["Podpasmo"] .
-         
-         "</TD></TR></a><br/ >" ;
-}
 
 mysql_free_result($result);
 mysql_close($link);
