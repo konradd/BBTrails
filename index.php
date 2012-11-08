@@ -65,21 +65,43 @@ mysql_select_db("1206275_trails")
     or die("Could not select database");
 
 
-$query  = "SELECT Podpasma.Podpasmo, Podpasma.Adres FROM Podpasma";
-$result = mysql_query($query)
-    or die("Query failed");
-$query  = "SELECT Pasma.Pasmo FROM Pasma";
-$result1 = mysql_query($query)
+$query1  = "SELECT Pasma.Pasmo, Podpasma.Podpasmo, Podpasma.Adres FROM Podpasma, Pasma WHERE Podpasma.ABC = Pasma.id AND Pasma.id = 1";
+$result1 = mysql_query($query1)
     or die("Query1 failed");
-       
-while ($pasma = mysql_fetch_row($result1))
-	{
-	foreach ($pasma as $pasmo)
-		echo "<h1>". $pasmo. "</h1>" ;
-		while ($podpasma = mysql_fetch_row($result))
-		foreach ($podpasma as $podpasmo)
-			echo $podpasmo. "<br />" ;
-		}
+    
+print ("<h1>Góry Świętokrzyskie</h1><ul>");  
+  
+while ($row = mysql_fetch_array($result1)) {
+	$ad= $row["Adres"];  	 
+	echo "<li><a href=$ad>" . $row["Podpasmo"]  .
+	     "</a></li>" ;
+}
+
+
+$query2  = "SELECT Pasma.Pasmo, Podpasma.Podpasmo, Podpasma.Adres FROM Podpasma, Pasma WHERE Podpasma.ABC = Pasma.id AND Pasma.id = 2";
+$result2 = mysql_query($query2)
+    or die("Query2 failed");
+    
+print ("<h1>Karpaty</h1><ul>");  
+  
+while ($row = mysql_fetch_array($result2)) {
+	$ad= $row["Adres"];  	 
+	echo "<li><a href=$ad>" . $row["Podpasmo"]  .
+	     "</a></li>" ;
+}
+    
+$query3  = "SELECT Pasma.Pasmo, Podpasma.Podpasmo, Podpasma.Adres FROM Podpasma, Pasma WHERE Podpasma.ABC = Pasma.id AND Pasma.id = 3";
+$result3 = mysql_query($query3)
+    or die("Query3 failed");
+    
+print ("<h1>Sudety</h1><ul>");  
+  
+while ($row = mysql_fetch_array($result3)) {
+	$ad= $row["Adres"];  	 
+	echo "<li><a href=$ad>" . $row["Podpasmo"]  .
+	     "</a></li>" ;
+}
+
 	
 
 
