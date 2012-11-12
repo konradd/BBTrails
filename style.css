@@ -27,11 +27,44 @@ min-height:900px;
 background-color: #C9C9C9;
 font-size:12px;
 width:750px;
+}
+	
+#data {
+margin-left:20px;
+margin-right:490px;
+padding: 0px 10px 10px 10px;
+background-color: #969696;
+font-size:18px;
+clear:none;
+}
+	#data h1 {
+		font-family: Helvetica;
+		color: #BA7200;
+		font-size:35px;
+		margin-bottom:0px;
+		}
+			#data h2 {
+			font-family: Helvetica;
+			color: #FFFFFF;
+			font-size:12px;
+			margin-top:0px;
+			}
+				#data h3 {
+				font-family: Helvetica;
+				color: #FFFFFF;
+				font-size:25px;
+				margin-top:0px;
+				}
 
+#map{
+font-size:8px;
+margin-left:300px;
 
 }
- 
-}        
+#opis {
+padding: 5px 10px 5px 10px;
+font-size:15px}        
+}
 #menu {
 height:200px; 
 width:1100px; 

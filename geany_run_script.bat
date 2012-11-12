@@ -1,4 +1,4 @@
-php "index.php"
+./style
 
 pause
 del "%0"
