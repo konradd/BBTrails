@@ -31,9 +31,7 @@ width:750px;
 	
 #data {
 margin-left:20px;
-margin-right:490px;
-padding: 0px 10px 10px 10px;
-background-color: #969696;
+padding: 0px 10px 60px 10px;
 font-size:18px;
 clear:none;
 }
@@ -55,12 +53,25 @@ clear:none;
 				font-size:25px;
 				margin-top:0px;
 				}
-
-#map{
-font-size:8px;
-margin-left:300px;
-
+	#trudn{
+	float:left;
+	margin-right:0px;
+	color:#FFFFFF;
+	}
+		#trudn h1{
+		font-size:18px;}
+	#fun{
+	margin-left:200px;
+	color:#FFFFFF;
+	}
+		#fun h1{
+		font-size:18px;}
+	
+#through{
+float:right;
+padding-right:200px;
 }
+
 #opis {
 padding: 5px 10px 5px 10px;
 font-size:15px}        
