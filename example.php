@@ -18,8 +18,8 @@ $query1  = "SELECT Trasy.Kolor, Kolory.Kolor FROM Trasy, Kolory WHERE Trasy.ID=1
 $result1 = mysql_query($query1)
     or die("Query1 failed");
 while ($row = mysql_fetch_array($result1)) 
-	$title= $row["Kolor"];  	 
-	print ("<title>$title</title>");
+	$color= $row["Kolor"];	
+	print ("<title>$color</title>");
   
 echo '  
   <link rel="stylesheet" type="text/css" href="style.css" />   
@@ -60,19 +60,65 @@ echo '
 
         </div>
 
-            <div id="right">
+            <div id="right"> ';
+$query2  = "SELECT Pasma.Pasmo, Podpasma.Podpasmo, Podpasma.Adres FROM Podpasma, Pasma WHERE Podpasma.ABC = Pasma.id AND Pasma.id = 1";
+$result2 = mysql_query($query2)
+    or die("Query2 failed");
+    
+print ("<h1>Góry Świętokrzyskie</h1><ul>");    
+while ($row = mysql_fetch_array($result2)) {
+	$ad= $row["Adres"];  	 
+	echo "<li><a href=$ad>" . $row["Podpasmo"]  .
+	     "</a></li>" ;
+}
+print ("</ul>");	 	     
 
-       ...     
+
+
+$query3  = "SELECT Pasma.Pasmo, Podpasma.Podpasmo, Podpasma.Adres FROM Podpasma, Pasma WHERE Podpasma.ABC = Pasma.id AND Pasma.id = 2";
+$result3 = mysql_query($query3)
+    or die("Query3 failed");
+    
+print ("<h1>Karpaty</h1><ul>");    
+while ($row = mysql_fetch_array($result3)) {
+	$ad= $row["Adres"];  	 
+	echo "<li><a href=$ad>" . $row["Podpasmo"]  .
+	     "</a></li>" ;
+}
+print ("</ul>");	
+ 	     
+    
+$query4  = "SELECT Pasma.Pasmo, Podpasma.Podpasmo, Podpasma.Adres FROM Podpasma, Pasma WHERE Podpasma.ABC = Pasma.id AND Pasma.id = 3";
+$result4 = mysql_query($query4)
+    or die("Query4 failed");
+    
+print ("<h1>Sudety</h1>");  
+print ("<ul>");
+while ($row = mysql_fetch_array($result4)) {
+	$ad= $row["Adres"];  	 
+	echo "<li><a href=$ad>" . $row["Podpasmo"]  .
+	     "</a></li>" ;
+}	     
+print ("</ul>");
+
+        
                                                     
-        </div>          
+echo       ' </div>          
   
             <div id="main">
 	<div id="data">
 		 <div id="through">
 		  ABC<br />ADDA
 		 </div>
-		  			
-	 <h1>Zielony szlak</h1>
+';
+$query5  = "SELECT * FROM Trasy, Kolory WHERE Trasy.ID=1 AND Kolory.ID=Trasy.Kolor";
+$result5 = mysql_query($query5)
+    or die("Query1 failed");
+while ($row = mysql_fetch_array($result5)) 
+	$color= $row["Kolor"];
+	$end=$row["Koniec"]	;
+	print ("<h1>$color - $end</h1>");	  			
+echo'
      <h2>Kozia Góra - Beskid Śląski</h2>
      6 km <br />
      100 m  <img src="Grafiki/pion.png"/> <br />
