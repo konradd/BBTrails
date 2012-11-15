@@ -20,9 +20,12 @@ $result1 = mysql_query($query1)
 while ($row = mysql_fetch_array($result1)) 
 	$color= $row["Kolor"];	
 	print ("<title>$color</title>");
+	
+
   
 echo '  
-  <link rel="stylesheet" type="text/css" href="style.css" />   
+  <link rel="stylesheet" type="text/css" href="style.css" />
+  <link rel="icon" href="/Grafiki/favicon.png" />   
 
  </head>
 
@@ -107,17 +110,24 @@ echo       ' </div>
   
             <div id="main">
 	<div id="data">
-		 <div id="through">
-		  ABC<br />ADDA
-		 </div>
-';
-$query5  = "SELECT * FROM Trasy, Kolory WHERE Trasy.ID=1 AND Kolory.ID=Trasy.Kolor";
+		 <div id="through">';
+$query5  = "SELECT Trasy.Przez_I, Trasy.Przez_II, Trasy.Przez_III FROM Trasy WHERE Trasy.ID=1";
 $result5 = mysql_query($query5)
-    or die("Query1 failed");
+    or die("Query5 failed");
 while ($row = mysql_fetch_array($result5)) 
+	for ($i=1; i>3; $i++)
+		$through=$row[$i];
+		if ($through!="NULL")
+			print ("$through<br />");
+	
+print	 ("</div>");
+
+$query  = "SELECT Trasy.Kolor, Kolory.Kolor FROM Trasy, Kolory WHERE Trasy.ID=1 AND Kolory.ID=Trasy.Kolor";
+$result = mysql_query($query)
+    or die("Query failed");
+while ($row = mysql_fetch_array($result)) 
 	$color= $row["Kolor"];
-	$end=$row["Koniec"]	;
-	print ("<h1>$color - $end</h1>");	  			
+	print ("<h1>$color</h1>");	  			
 echo'
      <h2>Kozia Góra - Beskid Śląski</h2>
      6 km <br />
