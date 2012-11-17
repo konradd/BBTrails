@@ -13,14 +13,16 @@
 	mysql_query('SET NAMES utf8');
 	mysql_select_db("1206275_trails")
 	    or die("Could not select database");
+	$id=2;
 //PASEK - KOLOR/SZCZYT
-	$query1  = "SELECT Trasy.Kolor, Kolory.Kolor FROM Trasy, Kolory WHERE Trasy.ID=1 AND Kolory.ID=Trasy.Kolor";
+	global $id;
+	$query1  = "SELECT Trasy.Kolor, Kolory.Kolor FROM Trasy, Kolory WHERE Trasy.ID=$id AND Kolory.ID=Trasy.Kolor";
 	$result1 = mysql_query($query1)
 	    or die("Query1 failed");
 	while ($row = mysql_fetch_array($result1)) 
 		$color= $row["Kolor"];	
 		print ("<title>$color");
-	$query0  = "SELECT Trasy.Koniec, Szczyty.Szczyt FROM Trasy, Szczyty WHERE Trasy.ID=1 AND Szczyty.ID=Trasy.Koniec";
+	$query0  = "SELECT Trasy.Koniec, Szczyty.Szczyt FROM Trasy, Szczyty WHERE Trasy.ID=$id AND Szczyty.ID=Trasy.Koniec";
 	$result0 = mysql_query($query0)
 	    or die("Query0 failed");
 	while ($row = mysql_fetch_array($result0)) 
@@ -119,7 +121,7 @@ echo ' </div>
 		<div id="data">
 			<div id="through">';
 //PRZEZ
-	$query5  = "SELECT Trasy.Przez_I, Trasy.Przez_II, Trasy.Przez_III FROM Trasy WHERE Trasy.ID=1";
+	$query5  = "SELECT Trasy.Przez_I, Trasy.Przez_II, Trasy.Przez_III FROM Trasy WHERE Trasy.ID=$id";
 	$result5 = mysql_query($query5)
 		or die("Query5 failed");
 	while ($row = mysql_fetch_array($result5)) 
@@ -138,7 +140,7 @@ echo ' </div>
 // SZCZYT - PASMO
      global $end;
      print ("<h2> $end ");
-     $query6  = "SELECT Trasy.Pasmo, Podpasma.Podpasmo FROM Trasy, Podpasma WHERE Trasy.ID=1 AND Podpasma.ID=Trasy.Pasmo";
+     $query6  = "SELECT Trasy.Pasmo, Podpasma.Podpasmo FROM Trasy, Podpasma WHERE Trasy.ID=$id AND Podpasma.ID=Trasy.Pasmo";
 	 $result6 = mysql_query($query6)
 		 or die("Query6 failed");
 	 while ($row = mysql_fetch_array($result6)) 
@@ -148,13 +150,13 @@ echo ' </div>
      
  
 // DŁUGOŚĆ - PRZEWYŻSZENIE
-	 $query7  = "SELECT Trasy.Dlugosc FROM Trasy WHERE Trasy.ID=1 ";
+	 $query7  = "SELECT Trasy.Dlugosc FROM Trasy WHERE Trasy.ID=$id ";
 	 $result7 = mysql_query($query7)
 		 or die("Query7 failed");
 	 while ($row = mysql_fetch_array($result7)) 
 	 $lenght= $row["Dlugosc"];
 	 	 print ("$lenght km <br />");
-	 $query8  = "SELECT Trasy.Pion FROM Trasy WHERE Trasy.ID=1 ";
+	 $query8  = "SELECT Trasy.Pion FROM Trasy WHERE Trasy.ID=$id ";
 	 $result8 = mysql_query($query8)
 		 or die("Query8 failed");
 	 while ($row = mysql_fetch_array($result8)) 
@@ -167,13 +169,13 @@ echo'
 	   <h1>Trudność:</h1>';
 	   
 //TRUDNOSC - FUN
-	 $query9  = "SELECT Trasy.Trudnosc FROM Trasy WHERE Trasy.ID=1 ";
+	 $query9  = "SELECT Trasy.Trudnosc FROM Trasy WHERE Trasy.ID=$id ";
 	 $result9 = mysql_query($query9)
 		 or die("Query9 failed");
 	 while ($row = mysql_fetch_array($result9)) 
 	 $lvl= $row["Trudnosc"];
 	 	 print ("$lvl<sup>/10</sup> </div>");
-	 $query10  = "SELECT Trasy.Fun FROM Trasy WHERE Trasy.ID=1 ";
+	 $query10  = "SELECT Trasy.Fun FROM Trasy WHERE Trasy.ID=$id ";
 	 $result10 = mysql_query($query10)
 		 or die("Query10 failed");
 	 while ($row = mysql_fetch_array($result10)) 
@@ -183,7 +185,7 @@ echo'
  
            
 //MAPA    
-	 $query11  = "SELECT Trasy.Mapa FROM Trasy WHERE Trasy.ID=1 ";
+	 $query11  = "SELECT Trasy.Mapa FROM Trasy WHERE Trasy.ID=$id ";
 	 $result11 = mysql_query($query11)
 		 or die("Query11 failed");
 	 while ($row = mysql_fetch_array($result11)) 
@@ -191,7 +193,7 @@ echo'
 	 	 print ("$map</div>");
 
 //OPIS
-	 $query12  = "SELECT Trasy.Opis FROM Trasy WHERE Trasy.ID=1 ";
+	 $query12  = "SELECT Trasy.Opis FROM Trasy WHERE Trasy.ID=$id ";
 	 $result12 = mysql_query($query12)
 		 or die("Query12 failed");
 	 while ($row = mysql_fetch_array($result12)) 
