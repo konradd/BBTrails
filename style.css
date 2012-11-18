@@ -27,7 +27,23 @@ background-color: #C9C9C9;
 font-size:12px;
 width:750px;
 }
-	
+	#main h3 {
+		padding-left:30px;
+		font-family:Helvetica;
+		letter-spacing:0px;
+		color: #BA7200;
+		font-size:35px;
+		margin-bottom:0px;
+		margin-top:25px;
+		}
+		#main h4 {
+			padding-left:30px;
+			font-family: Helvetica;
+			color: #FFFFFF;
+			font-size:12px;
+			margin-top:0px;
+			}
+		
 #data {
 margin-left:20px;
 padding: 0px 10px 60px 10px;
