@@ -13,7 +13,7 @@
 	mysql_query('SET NAMES utf8');
 	mysql_select_db("1206275_trails")
 	    or die("Could not select database");
-	$id=1;
+	$id=2;
 //PASEK - SZCZYT
 	global $id;
 	$query0  = "SELECT Szczyty.Szczyt FROM Szczyty WHERE Szczyty.ID=$id";
@@ -126,16 +126,13 @@ echo ' </div>
 	 print("<h4>$range</h4>");
 	 
 //SZLAKI
-	$query6  = "SELECT Kolory.Kolor, Trasy.Kolor FROM Kolory, Trasy WHERE Trasy.Koniec = 1 AND Kolory.ID = Trasy.Kolor";
+	$query6  = "SELECT Trasy.Kolor, Trasy.Start, Kolory.Kolor FROM Trasy, Kolory WHERE Trasy.Koniec=$id AND Kolory.ID=Trasy.Kolor";
 	$result6 = mysql_query($query6)
 	    or die("Query6 failed");
-	     
-	print ("<ul>");
-	while ($row = mysql_fetch_array($result6)) {
-		echo "<li>". $row["Kolory.Kolor"]  .
-		     "</a></li>" ;
-	}	     
-	print ("</ul>");
+	while ($row = mysql_fetch_array($result6))
+		$trail=$row["Kolor"];
+	 	print ("$trail");	     
+	
 		
 
 	
