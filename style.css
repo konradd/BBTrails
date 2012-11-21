@@ -80,9 +80,13 @@ width:750px;
 				
 #data {
 margin-left:20px;
-padding: 0px 10px 60px 10px;
+padding: 0px 10px 0px 10px;
+margin-bottom:10px;
 font-size:18px;
+width:250px;
 clear:none;
+background-color:#9FA2A8;
+border-right:10px solid #858585;
 }
 	#data h1 {
 		font-family:Helvetica;
@@ -117,6 +121,11 @@ clear:none;
 		#fun h1{
 		font-size:18px;}
 	
+#map{
+	width:400px;
+	height:400px;
+	flow:right;
+	}
 #through{
 float:right;
 font-family:Helvetica;

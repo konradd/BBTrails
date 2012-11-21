@@ -147,13 +147,13 @@ echo ' </div>
 		 or die("Query7 failed");
 	 while ($row = mysql_fetch_array($result7)) 
 	 $lenght= $row["Dlugosc"];
-	 	 print ("$lenght km <br />");
+	 	 print ("$lenght km       ");
 	 $query8  = "SELECT Trasy.Pion FROM Trasy WHERE Trasy.ID=$id ";
 	 $result8 = mysql_query($query8)
 		 or die("Query8 failed");
 	 while ($row = mysql_fetch_array($result8)) 
 	 $vert= $row["Pion"];
-	 print ("$vert m  ");
+	 print ("    $vert m  ");
 	 print ('<img src="Grafiki/pion.png"/> <br />');
 	 
 echo'    
@@ -173,7 +173,7 @@ echo'
 	 while ($row = mysql_fetch_array($result10)) 
 	 $funn= $row["Fun"];
 	 print ('<div id="fun"> <h1>Fun:</h1>');
-	 print ("$funn<sup>/10</sup></div>");    
+	 print ("$funn<sup>/10</sup></div></div>");    
  
            
 //MAPA    
@@ -182,8 +182,9 @@ echo'
 		 or die("Query11 failed");
 	 while ($row = mysql_fetch_array($result11)) 
 	 $map= $row["Mapa"];
+		 print ('<div id="map">');
 	 	 print ("$map</div>");
-
+		 
 //OPIS
 	 $query12  = "SELECT Trasy.Opis FROM Trasy WHERE Trasy.ID=$id ";
 	 $result12 = mysql_query($query12)
