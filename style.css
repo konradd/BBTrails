@@ -24,6 +24,7 @@ background: url(Grafiki/Top.png);
 #main {
 float: left;
 background-color: #C9C9C9;
+min-height:980px;
 font-size:12px;
 width:750px;
 }
@@ -40,10 +41,37 @@ width:750px;
 			padding-left:30px;
 			font-family: Helvetica;
 			color: #FFFFFF;
-			font-size:12px;
+			letter-spacing:0.5px;
+			font-size:13px;
 			margin-top:0px;
 			}
-		
+			#main h5 {
+				font-family: Helvetica;
+				color: #BA7200;
+				font-size:16px;
+				margin-bottom:0px;
+				margin-left:30px;
+				}
+				#main ul{
+					margin-top:0px;
+					}
+					#main li {
+						list-style:none;
+						padding-left:5px;
+						}  
+					
+						#main a {
+							color: #000000; 
+							font-family: Helvetica;
+							letter-spacing:0.5px;
+							font-size: 15px;
+							text-decoration:none;
+							}
+							#main strong {
+								color:#FFFFFF;
+								font-size:14px;
+								}
+				
 #data {
 margin-left:20px;
 padding: 0px 10px 60px 10px;
@@ -60,7 +88,7 @@ clear:none;
 			#data h2 {
 			font-family: Helvetica;
 			color: #FFFFFF;
-			font-size:12px;
+			font-size:13px;
 			margin-top:0px;
 			}
 				#data h3 {
@@ -111,7 +139,7 @@ width:1100px;
 	        
 	        float:left;
 	        list-style: none;
-	        width:70px;
+	        width:100px;
 	        
 	        
           	        }

@@ -13,10 +13,10 @@
 	mysql_query('SET NAMES utf8');
 	mysql_select_db("1206275_trails")
 	    or die("Could not select database");
-	$id=2;
+	$id=5;
 //PASEK - SZCZYT
 	global $id;
-	$query0  = "SELECT Szczyty.Szczyt FROM Szczyty WHERE Szczyty.ID=$id";
+	$query0  = "SELECT Szczyty.Szczyt FROM Szczyty WHERE Szczyty.ID=$id ";
 	$result0 = mysql_query($query0)
 	    or die("Query0 failed");
 	while ($row = mysql_fetch_array($result0)) 
@@ -118,7 +118,7 @@ echo ' </div>
 	print ("<h3>$hill</h3>");
 	
 //PASMO
-	 $query5  = "SELECT Trasy.Pasmo, Podpasma.Podpasmo FROM Trasy, Podpasma WHERE Trasy.ID=$id AND Podpasma.ID=Trasy.Pasmo";
+	 $query5  = "SELECT Szczyty.Pasmo, Podpasma.Podpasmo FROM Szczyty, Podpasma WHERE Szczyty.ID=$id AND Podpasma.ID=Szczyty.Pasmo";
 	 $result5 = mysql_query($query5)
 		 or die("Query5 failed");
 	 while ($row = mysql_fetch_array($result5)) 
@@ -126,14 +126,23 @@ echo ' </div>
 	 print("<h4>$range</h4>");
 	 
 //SZLAKI
-	$query6  = "SELECT Trasy.Kolor, Trasy.Start, Kolory.Kolor FROM Trasy, Kolory WHERE Trasy.Koniec=$id AND Kolory.ID=Trasy.Kolor";
+	$query6  = "SELECT Trasy.Kolor, Trasy.Start, Trasy.Adres, Kolory.Kolor FROM Trasy, Kolory WHERE Trasy.Koniec=$id AND Kolory.ID=Trasy.Kolor";
 	$result6 = mysql_query($query6)
 	    or die("Query6 failed");
+	print("<h5>Szlaki:</h5><ul>");
 	while ($row = mysql_fetch_array($result6))
+		{
 		$trail=$row["Kolor"];
-	 	print ("$trail");	     
-	
-		
+		$ad=$row["Adres"];
+		$begin=$row["Start"];
+		$query7  = "SELECT Miasta.Miasto FROM Miasta WHERE Miasta.ID=$begin";
+		$result7 = mysql_query($query7)
+			or die("Query7 failed");
+		$roow = mysql_fetch_array($result7);
+		$city=$roow["Miasto"];
+	 	echo ("<li><a href=$ad>$trail - <strong>$city</strong></a></li>");	     
+		}
+	print("</ul>");
 
 	
 	  			
