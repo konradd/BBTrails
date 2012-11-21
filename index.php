@@ -12,7 +12,7 @@
   <title>Best Bike Trails</title>
 
     <link rel="stylesheet" type="text/css" href="style.css" />
-    
+    <link rel="icon" href="/Grafiki/favicon.png" />
 
  </head>
 
@@ -107,7 +107,12 @@ mysql_close($link);
         </div>          
   
             <div id="main">             
-          
+	 Witaj na Best Bike Trails, pierwszym polskim internetowym katalogu szlaków rowerowych.<br /> 
+     Szukasz inspiracji na weekendowy wyjazd? Nie chcesz atakować nieznanej góry w ciemno? 
+     A może znalazłeś świetny szlak w Twojej okolicy i chcesz aby inni również go znali?<br /> <br />
+     Nie ważne motywy, nie ważne czy jeździsz na szosie czy góralu. To miejsce również dla <b>Ciebie</b> <br />
+     <center><i>Admin</i></center>
+     
 	 
 	        </div>
 	 

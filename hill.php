@@ -13,7 +13,7 @@
 	mysql_query('SET NAMES utf8');
 	mysql_select_db("1206275_trails")
 	    or die("Could not select database");
-	$id=5;
+	$id=2;
 //PASEK - SZCZYT
 	global $id;
 	$query0  = "SELECT Szczyty.Szczyt FROM Szczyty WHERE Szczyty.ID=$id ";
@@ -41,24 +41,16 @@ echo '
 
         <div id="menu">
 			        <ul>
-      <li><a href="http://www.kondzios230.bikestats.pl"> 
+      <li><a href="/index.php"> 
       Główna
       <span></span></a></li>
-      <li><a href="http://www.bikestats.pl/rowery/Roman_6645_10291.html"> 
-      Rower
+      <li><a href="/podstrony/karty/about.php"> 
+      O projekcie
       <span></span></a></li>
-      <li><a href="http://www.bikestats.pl/">
-			Bikestats
+      <li><a href="/podstrony/karty/contact.php">
+	  Kontakt
       <span></span></a></li>
-      <li><a href="http://kondzios230.bikestats.pl/index.php?category=15244">
-      Sprzęt			<span></span></a></li>
-      <li><a href="http://kondzios230.bikestats.pl/index.php?category=15245">
-      Teren
-			<span></span></a></li>
-      <li><a href="http://kondzios230.bikestats.pl/index.php?category=15247">
-      Asfalty
-			<span></span></a></li>
-       
+      
          </ul>
 
         
@@ -140,7 +132,7 @@ echo ' </div>
 			or die("Query7 failed");
 		$roow = mysql_fetch_array($result7);
 		$city=$roow["Miasto"];
-	 	echo ("<li><a href=$ad>$trail - <strong>$city</strong></a></li>");	     
+	 	echo ("<li><a href=$ad><strong>$trail</strong> - $city</a></li>");	     
 		}
 	print("</ul>");
 
