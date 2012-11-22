@@ -29,8 +29,9 @@ font-family:Helvetica;
 min-height:963px;
 margin-top:20px;
 font-size:20px;
-padding:15px 0px 0px 15px;
-width:750px;
+padding:15px 15px 0px 15px;
+width:730px;
+text-align:justify;
 }
 	#main h1 {
 			font-family:Helvetica;
@@ -145,7 +146,8 @@ padding-right:200px;
 height:400px;}
 #opis {
 padding: 5px 10px 25px 10px;
-font-size:17px}        
+font-size:17px;
+text-align:justify;}        
 }
 
 #menu {

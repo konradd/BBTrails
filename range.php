@@ -108,13 +108,14 @@ echo ' </div>
 global $range;	
 print ("<h1>$range</h1><h5>Szczyty:</h5><ul>");
 
-$query5  = "SELECT Szczyty.Szczyt, Szczyty.ID FROM Szczyty WHERE Szczyty.Pasmo=$id";
+$query5  = "SELECT Szczyty.Szczyt, Szczyty.ID, Szczyty.Adres FROM Szczyty WHERE Szczyty.Pasmo=$id";
 	$result5 = mysql_query($query5)
 	    or die("Query5 failed");
 	while ($row = mysql_fetch_array($result5))
 		{
 		$hill=$row["Szczyt"];
-		echo ("<li><a href=>$hill</li>");	     
+		$ad=$row["Adres"];
+		echo ("<li><a href=$ad>$hill</li>");	     
 		}
 	print("</ul>");
 
