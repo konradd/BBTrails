@@ -109,20 +109,20 @@ echo '
                                                     
 echo ' </div>          
 
-	<div id="main">
-		<div id="data">
-			<div id="through">';
-//PRZEZ
-	$query5  = "SELECT Trasy.Przez_I, Trasy.Przez_II, Trasy.Przez_III FROM Trasy WHERE Trasy.ID=$id";
-	$result5 = mysql_query($query5)
-		or die("Query5 failed");
-	while ($row = mysql_fetch_array($result5)) 
-		for ($i=1; i>3; $i++)
-			$through=$row[$i];
-			if ($through!="NULL")
-				print ("$through<br />");
-		
-	print	 ("</div>");
+	<div id="main">';
+//MAPA    
+	 $query11  = "SELECT Trasy.Mapa FROM Trasy WHERE Trasy.ID=$id ";
+	 $result11 = mysql_query($query11)
+		 or die("Query11 failed");
+	 while ($row = mysql_fetch_array($result11)) 
+	 $map= $row["Mapa"];
+		 print ('<div id="none"><div id="map">');
+	 	 print ("$map</div>");
+	 	 	
+
+echo '		<div id="data">
+			';
+
 	
 //KOLOR
 	global $color;
@@ -173,17 +173,21 @@ echo'
 	 while ($row = mysql_fetch_array($result10)) 
 	 $funn= $row["Fun"];
 	 print ('<div id="fun"> <h1>Fun:</h1>');
-	 print ("$funn<sup>/10</sup></div></div>");    
+	 print ("$funn<sup>/10</sup></div>");    
  
-           
-//MAPA    
-	 $query11  = "SELECT Trasy.Mapa FROM Trasy WHERE Trasy.ID=$id ";
-	 $result11 = mysql_query($query11)
-		 or die("Query11 failed");
-	 while ($row = mysql_fetch_array($result11)) 
-	 $map= $row["Mapa"];
-		 print ('<div id="map">');
-	 	 print ("$map</div>");
+//PRZEZ
+	print ('<div id="through">');
+	$query5  = "SELECT Trasy.Przez_I, Trasy.Przez_II, Trasy.Przez_III FROM Trasy WHERE Trasy.ID=$id";
+	$result5 = mysql_query($query5)
+		or die("Query5 failed");
+	while ($row = mysql_fetch_array($result5)) 
+		for ($i=1; i>3; $i++)
+			$through=$row[$i];
+			if ($through!="NULL")
+				print ("$through<br />");
+		
+	print	 ("</div></div></div>");           
+
 		 
 //OPIS
 	 $query12  = "SELECT Trasy.Opis FROM Trasy WHERE Trasy.ID=$id ";

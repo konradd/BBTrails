@@ -79,69 +79,66 @@ width:750px;
 								}
 				
 #data {
-margin-left:20px;
-padding: 0px 10px 0px 10px;
-margin-bottom:10px;
-font-size:18px;
-width:250px;
-clear:none;
 background-color:#9FA2A8;
 border-right:10px solid #858585;
+width:260px;
+padding:0px 10px 0px 10px;
+margin-bottom:120px;
 }
-	#data h1 {
-		font-family:Helvetica;
-		letter-spacing:0px;
-		color: #BA7200;
-		font-size:35px;
-		margin-bottom:0px;
-		}
-			#data h2 {
-			font-family: Helvetica;
-			color: #FFFFFF;
-			font-size:13px;
-			margin-top:0px;
+		#data h1 {
+			font-family:Helvetica;
+			letter-spacing:0px;
+			color: #BA7200;
+			font-size:35px;
+			margin-bottom:0px;
 			}
-				#data h3 {
+				#data h2 {
 				font-family: Helvetica;
 				color: #FFFFFF;
-				font-size:25px;
+				font-size:13px;
 				margin-top:0px;
 				}
-	#trudn{
-	float:left;
-	margin-right:0px;
-	color:#FFFFFF;
-	}
-		#trudn h1{
-		font-size:18px;}
-	#fun{
-	margin-left:200px;
-	color:#FFFFFF;
-	}
-		#fun h1{
-		font-size:18px;}
+					#data h3 {
+					font-family: Helvetica;
+					color: #FFFFFF;
+					font-size:25px;
+					margin-top:0px;
+					}
+		#trudn{
+		float:left;
+		margin-right:0px;
+		color:#FFFFFF;
+		}
+			#trudn h1{
+			font-size:18px;}
+		#fun{
+		margin-left:200px;
+		color:#FFFFFF;
+		}
+			#fun h1{
+			font-size:18px;}
 	
 #map{
-	width:400px;
-	height:400px;
-	flow:right;
+	float:right;
+	padding-right:10px;
 	}
+	
 #through{
-float:right;
 font-family:Helvetica;
 padding-right:200px;
 }
 	#through a {
-	float:right;
 	font-family:Helvetica;
 	padding-right:200px;
 	text-decoration:none;
 	}
-
+#none {
+height:400px;}
 #opis {
 padding: 5px 10px 25px 10px;
-font-size:15px}        
+font-size:17px}        
 }
+
 #menu {
 height:200px; 
 width:1100px;
