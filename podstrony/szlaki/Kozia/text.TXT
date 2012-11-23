@@ -1,0 +1,5 @@
+			1	1	21	1	1	2	NULL	NULL	NULL	7	9	Szlak zarówno do zjazdu (trudnego) i podjazdu (tru...	1.8	215	<iframe src="http://osm.trail.pl/embed?ll=19.05312...	/podstrony/szlaki/Kozia/zielony.html
+			2	2	22	6	2	5	NULL	NULL	NULL	4	9	Przyjemny szosowy podjazd pod zbiornik elektrowni ...	7.7	446	<iframe src="http://osm.trail.pl/embed?ll=19.21148...	/podstrony/szlaki/¯ar/szosa.html
+			3	2	21	6	1	6	NULL	NULL	NULL	2	6	Szybki szosowy podjazd, przeciêtny, remontowany as...	7.6	415	<iframe src="http://osm.trail.pl/embed?ll=19.06316...	/podstrony/szlaki/Przegibek/szosaI.html
+			4	2	21	6	3	7	NULL	NULL	NULL	5	6	Znany w okolicznym kolarskim œwiatku podjazd, jede...	3.8	453	<iframe src="http://osm.trail.pl/embed?ll=19.11318...	/podstrony/szlaki/Magurka/szosa.html
+			5	1	21	3	1	2	NULL	NULL	NULL	4	2	Najprostsza opcja podjazdu na Kozi¹ Górê, ³¹czona ...	4	320	<iframe src="http://osm.trail.pl/embed?ll=19.04922...	/podstrony/szlaki/Kozia/zolty.html
